@@ -1,0 +1,19 @@
+{% extends 'portfolio/base.html' %}
+{% block content%}
+
+<center>
+{% for b_obj in blog_obj%}
+    {% if b_obj.image %}
+<img src="{{ b_obj.image.url }}" >
+    {% endif %}
+    <br>
+    {% if b_obj.title %}
+{{b_obj.title}}
+{% endif %}
+{% if b_obj.url %}
+<a href="{{ b_obj.url}}" target="_blank">Blog Link</a>
+    <br>
+{% endif %}
+{% endfor %}
+</center>
+{% endblock %}
