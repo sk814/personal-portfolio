@@ -4,7 +4,7 @@
 <center>
 {% for b_obj in blog_obj%}
     {% if b_obj.image %}
-<img src="{{ b_obj.image.url }}" >
+<img src="{{ b_obj.image.url }}" class="img-fluid" >
     {% endif %}
     <br>
     {% if b_obj.title %}
