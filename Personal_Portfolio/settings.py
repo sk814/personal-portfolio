@@ -25,7 +25,11 @@ SECRET_KEY = 'lqe!y_c@)86v$*o=)-d+v83!4&g4t&69mdyx_(6($7ae&7=05n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = ["https://sk814.pythonanywhere.com"]
+=======
+ALLOWED_HOSTS = ['sk814.pythonanywhere.com']
+>>>>>>> 7a71affd10e0b67b856d7346e3e57d445280156a
 
 
 # Application definition
