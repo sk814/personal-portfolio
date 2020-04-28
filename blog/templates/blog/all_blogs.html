@@ -1,20 +1,33 @@
 {% extends 'portfolio/base.html' %}
 {% block content%}
 
-<center>
-{% for b_obj in blog_obj%}
-    {% if b_obj.image %}
-<img src="{{ b_obj.image.url }}" class="img-fluid" >
-    {% endif %}
-    <br>
-    {% if b_obj.title %}
-{{b_obj.title}}
-{% endif %}
-{% if b_obj.url %}
-<a href="{{ b_obj.url}}" target="_blank">Blog Link</a>
-    <br>
-{% endif %}
-{% endfor %}
 
-</center>
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="bloglink">Copy link of the blog you want to post</label>
+        <input type="text" name="bloglink" class="form-control" id="bloglink" required placeholder="Help post a interesting blog link">
+    </div>
+    <button type="submit" class="btn btn-primary">Post</button>
+</form>
+
+
+
+<div class="row justify-content-center mt-3">
+<div class="col-md-9 text-center">
+
+    {% for b_obj in blog_obj%}
+    <div>
+        <h6 id="blogurl" class="normal"> <a class="nav-link" href="{{ b_obj.url}}">
+        {% if b_obj.title %}
+        {{ b_obj.url}}
+        {% endif %}
+        </a> </h6></div>
+    {% endfor %}
+</div>
+</div>
+
+
+
 {% endblock %}
