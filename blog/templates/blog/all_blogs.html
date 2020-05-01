@@ -1,14 +1,13 @@
 {% extends 'portfolio/base.html' %}
-{% block content%}
-
-
+{% block content %}
 
 <form method="POST">
     {% csrf_token %}
     <div class="form-group">
         <label for="bloglink">Copy link of the blog you want to post</label>
-        <input type="text" name="bloglink" class="form-control" id="bloglink" required placeholder="Help post a interesting blog link">
+        <input type="url" name="url" class="form-control" id="url" placeholder="Help provide good content for readers">
     </div>
+
     <button type="submit" class="btn btn-primary">Post</button>
 </form>
 
