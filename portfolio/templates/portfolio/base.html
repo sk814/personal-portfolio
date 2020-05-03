@@ -3,6 +3,8 @@
 <html lang="en">
 
 <head>
+
+    <script src="https://kit.fontawesome.com/cbbb7575de.js" crossorigin="anonymous"></script>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,7 +12,8 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="{% static "portfolio/custom.css" %}">
+
+  <link rel="stylesheet" href="{% static "portfolio/custom.css" %}" >
 
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 
@@ -21,30 +24,32 @@
 
 <body>
 
-  <nav id="topNav" class="navbar navbar-expand-md navbar-light">
+
+  <nav id="topNav" class="clearfix fixed-top navbar navbar-expand-sm navbar-light">
     <div class="container">
-      <a class="navbar-brand" href="{% url 'media' %}">
+
+        <a class="navbar-brand" href="{% url 'media' %}">
         <img src="{% static "portfolio/sanjeev.png" %}" width="68" height="55" class="d-inline-block align-top align-left" alt="Sanjeev's Logo" class="img-fluid">
-      </a>
+        </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse text-center" id="navbarNav">
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
         <ul class="navbar-nav ml-auto">
 
           <li class="nav-item">
             <a role="button" href="https://ssanjeev.pythonanywhere.com/" class="btn btn-primary">Sanjeev's Write</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="{% static "portfolio/Sanjeev_Resume.pdf" %}">Resume</a>
+          <li class="nav-item float-md-right float-sm-right">
+            <a class="nav-link" href="{% static "portfolio/Sanjeev_Resume.pdf" %}"><i class="fa fa-file-pdf-o" style="font-size:32px;color:blue"></i></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.linkedin.com/in/sanjeev-singh1/" target="_blank">LinkedIn</a>
+          <li class="nav-item float-md-right float-sm-right">
+            <a class="nav-link" href="https://www.linkedin.com/in/sanjeev-singh1/" target="_blank"><i class="fab fa-linkedin" style="font-size:32px;color:blue"></i></a>
           </li>
 
           <li>
-            <a role="button" href="{% url 'blog:all_blogs' %}" class="btn btn-primary">Reader's Portal</a>
+            <a role="button" href="{% url 'blog:all_blogs' %}" class="float-md-right float-sm-right btn btn-primary">Reader's Portal</a>
           </li>
         </ul>
       </div>
