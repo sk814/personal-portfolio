@@ -3,27 +3,29 @@
 {% load static %}
 
 {% block content %}
-
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
 
 <div class="row justify-content-center my-3">
   <div class="col-5">
       <br>
-    <img src="{% static 'portfolio/giphy.gif' %}" class="img-fluid">
+   <p id="fadeout"> <img src="{% static 'portfolio/giphy.gif' %}" class="img-fluid"></p>
+
+
   </div>
 </div>
 <!-- Fluid jumbotron -->
 <div class="jumbotron jumbotron-fluid container">
 <div class="row justify-content-center mb-3">
   <div class="col-md-9 text-center">
-    <h1 id="hometext" class="font-weight-bold">Check out  <a class="nav-link" href="https://ssanjeev.pythonanywhere.com/">Sanjeev's Write</a> and put there somthing interesting.</h1>
-    <h1> Thanks for your visit!</h1>
+    <h1 id="hometext" class="font-weight-bold">Check out  <a class="nav-link" href="https://ssanjeev.pythonanywhere.com/">Sanjeev's Write</a> and put there something interesting.</h1>
+    <h1> Thanks for your visit🙏!</h1>
   </div>
 </div>
 </div>
 
 
 
-<h2 class="mt-5">Have a look!</h2>
+<h2 class="mt-5">My Recent Projects 🚧</h2>
 <hr>
 <div class="row">
   {% for project in projects %}
@@ -43,15 +45,103 @@
   </div>
   {% endfor %}
 </div>
-<center> <!-- hitwebcounter Code START -->
-<a href="https://www.hitwebcounter.com" target="_blank">
-<img src="https://hitwebcounter.com/counter/counter.php?page=7278653&style=0025&nbdigits=4&type=page&initCount=0" title="User Stats" Alt="PHP Hits Count"   border="0" >
-</a>
-</center>
+
+
+  <!-- PHOTO GALLERY -->
+  <section id="gallery" class="py-5">
+    <div class="container">
+      <h1 class="text-center">My couple of photographs 📷</h1>
+      <p class="text-center">Click on photograph to chide another photograph!</p>
+      <div class="row mb-4">
+        <div class="col-md-4">
+          <a href="{% static 'portfolio/eight.JPG' %}" data-toggle="lightbox" data-gallery="img-gallery" data-height="560"
+            data-width="560">
+            <img src="{% static 'portfolio/one.jpg' %}" alt="" class="img-fluid">
+          </a>
+        </div>
+
+        <div class="col-md-4">
+          <a href="{% static 'portfolio/seven.JPG' %}" data-toggle="lightbox" data-gallery="img-gallery" data-height="561"
+            data-width="561">
+            <img src="{% static 'portfolio/two.jpg' %}" alt="" class="img-fluid">
+          </a>
+        </div>
+
+        <div class="col-md-4">
+          <a href="{% static 'portfolio/three.jpg' %}" data-toggle="lightbox" data-gallery="img-gallery" data-height="562"
+            data-width="562">
+            <img src="{% static 'portfolio/ten2.jpg' %}" alt="" class="img-fluid">
+          </a>
+        </div>
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-md-4">
+          <a href="{% static 'portfolio/nine.JPG' %}" data-toggle="lightbox" data-gallery="img-gallery" data-height="563"
+            data-width="563">
+            <img src="{% static 'portfolio/four.jpg' %}" alt="" class="img-fluid">
+          </a>
+        </div>
+
+        <div class="col-md-4">
+          <a href="{% static 'portfolio/ten3.JPG' %}" data-toggle="lightbox" data-gallery="img-gallery" data-height="564"
+            data-width="564">
+            <img src="{% static 'portfolio/five.jpg' %}" alt="" class="img-fluid">
+          </a>
+        </div>
+
+        <div class="col-md-4">
+          <a href="{% static 'portfolio/ten1.jpg' %}" data-toggle="lightbox" data-gallery="img-gallery" data-height="565"
+            data-width="565">
+            <img src="{% static 'portfolio/six.jpg' %}" alt="" class="img-fluid">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div class="row justify-content-center my-3">
+<h2>For More Images Follow @ Instagram</h2>
+  <a href="https://www.instagram.com/sanjeev_ssingh/" target="_blank">
+  <img src="https://www.brandchannel.com/wp-content/uploads/2016/05/instagram-new-logo-may-2016.jpg" width="50" height="50"  class="img-fluid">
+  </a>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+<!--<script>-->
+
+<!--$("#fadeout").fadeOut(3000);-->
+
+<!--$('#fadeout').hide().load(function () {-->
+<!--    $(this).fadeIn(2000);-->
+<!--});-->
+
+
+<!--$("#fadeout").bind("load", function (e) {  e.preventDefault(); $(this).fadeOut(); });-->
+
+<!--$('#fadeout').click(function(e) {-->
+<!--    e.preventDefault();-->
+<!--    $('#fadeout').fadeOut('slow', function() {-->
+<!--        $(this).html($('#fadeout').html()).fadeIn('fast');-->
+<!--    });-->
+<!--});-->
+
+<!--</script>-->
+
+
+<script>
+    // Lightbox Init
+    $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+      event.preventDefault();
+      $(this).ekkoLightbox();
+    });
+</script>
+
 {% endblock %}
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-    crossorigin="anonymous"></script>
+
+
+
+
+
